@@ -14,6 +14,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     private Vector2 _inputVector;
     private bool _isInput;
 
+    private Player _player;
+
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -22,9 +24,17 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
         _handler.gameObject.SetActive(false);
     }
 
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+    }
+
     private void Update()
     {
-        
+        if (_isInput)
+        {
+            _player.Move(_inputVector);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -54,5 +64,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
 
         _joystick.gameObject.SetActive(false);
         _handler.gameObject.SetActive(false);
+
+        // Move Stop
+        _player.Move(_inputVector);
     }
 }
