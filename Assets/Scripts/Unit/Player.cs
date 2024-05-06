@@ -8,14 +8,22 @@ public class Player : Unit
 
     private float _moveSpeed;
 
-    private void Awake()
+    private LevelBillBoard _levelBillBoard;
+
+    protected override void Awake()
     {
-        _moveSpeed = UnitSO.MoveSpeed;
+        base.Awake();
+        _moveSpeed = _unitSO.MoveSpeed;
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         _rigidbody = transform.GetComponent<Rigidbody>();
+
+        _levelBillBoard = FindObjectOfType<LevelBillBoard>();
+        _levelBillBoard.UpdateLevel(_currentLevel);
     }
 
     public void Move(Vector2 dir)
@@ -26,5 +34,13 @@ public class Player : Unit
             transform.forward = v;
         }
         _rigidbody.velocity = v * _moveSpeed;
+    }
+
+    protected override void LevelUp()
+    {
+        base.LevelUp();
+
+        // Level Up Effect
+        _levelBillBoard.UpdateLevel(_currentLevel);
     }
 }
