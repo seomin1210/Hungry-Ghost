@@ -11,6 +11,14 @@ public class Entity : Unit
     private Transform _model;
     private BoxCollider _boxCollider;
 
+    protected float _moveSpeed;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _moveSpeed = _unitSO.MoveSpeed;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -19,7 +27,8 @@ public class Entity : Unit
         _boxCollider = GetComponent<BoxCollider>();
 
         _levelBillBoard = transform.GetChild(0).GetComponent<LevelBillBoard>();
-        _levelBillBoard.UpdateLevel(_currentLevel.ToString());
+        _levelBillBoard.UpdateLevel(_currentLevel);
+        _levelBillBoard.UpdateOffset(_currentLevel - 1);
     }
 
     public void AddExp(int exp)
@@ -45,18 +54,11 @@ public class Entity : Unit
         _currentExp -= NeedExpTable.NeedExp[_currentLevel - 1];
         _currentLevel += 1;
 
-        if (_currentLevel >= 15)
-        {
-            _levelBillBoard.UpdateLevel("Max");
-        }
-        else
-        {
-            _levelBillBoard.UpdateLevel(_currentLevel.ToString());
-        }
-        _levelBillBoard.UpdateOffset();
+        _levelBillBoard.UpdateLevel(_currentLevel);
+        _levelBillBoard.UpdateOffset(_currentLevel - 1);
 
-        _model.localScale *= 1.5f;
-        _boxCollider.center = new Vector3(0f, _boxCollider.center.y * 1.5f, 0f);
-        _boxCollider.size *= 1.5f;
+        _model.localScale *= 1.3f;
+        _boxCollider.center = new Vector3(0f, _boxCollider.center.y * 1.3f, 0f);
+        _boxCollider.size *= 1.3f;
     }
 }

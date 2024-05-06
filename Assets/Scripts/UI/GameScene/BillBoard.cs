@@ -7,7 +7,8 @@ public class BillBoard : MonoBehaviour
     private Transform _mainCam;
     private Transform _player;
 
-    private Vector3 _offset = new Vector3(0f, 1.5f, 0.5f);
+    private Vector3 _offset = Vector3.zero;
+    private float[] _offsetY = { 1.5f, 3f, 4f, 5f, 5f, 6f, 7f, 8f, 10f, 13f, 16f, 20f, 24f, 30f, 35f};
 
     private void Awake()
     {
@@ -21,8 +22,8 @@ public class BillBoard : MonoBehaviour
         transform.position = _player.position + _offset;
     }
 
-    public void UpdateOffset()
+    public void UpdateOffset(int lv)
     {
-        _offset *= 1.3f;
+        _offset = Vector3.up * _offsetY[lv];
     }
 }

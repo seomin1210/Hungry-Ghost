@@ -3,24 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Entity
-{ 
+{
     private Rigidbody _rigidbody;
 
-    private float _moveSpeed;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        _moveSpeed = _unitSO.MoveSpeed;
-    }
+    private CameraController _camController;
 
     protected override void Start()
     {
         base.Start();
 
         _rigidbody = transform.GetComponent<Rigidbody>();
-
-        
+        _camController = Camera.main.GetComponent<CameraController>();
     }
 
     public void Move(Vector2 dir)
@@ -40,5 +33,9 @@ public class Player : Entity
         // Level Up Effect
 
         // Camera Zoom Out
+        if (_currentLevel > 8)
+        {
+            _camController.ZoomOut(_currentLevel - 6);
+        }
     }
 }

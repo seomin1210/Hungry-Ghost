@@ -32,6 +32,14 @@ public class Unit : MonoBehaviour
                 _collider.isTrigger = true;
             }
         }
+        else
+        {
+            // Can pass the wall
+            if (_currentLevel >= 8)
+            {
+                collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)

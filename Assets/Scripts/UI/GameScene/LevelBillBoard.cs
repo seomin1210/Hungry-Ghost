@@ -10,8 +10,18 @@ public class LevelBillBoard : BillBoard
         _levelText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateLevel(string lv)
+    public void UpdateLevel(int lv)
     {
-        _levelText.text = "LV. " + lv;
+        if (lv < 15)
+        {
+            _levelText.text = "LV. " + lv.ToString();
+        }
+        else if (lv == 15)
+        {
+            _levelText.text = "LV. MAX";
+            _levelText.fontSize = 3f;
+        }
+
+        if (lv == 10) _levelText.fontSize = 2f;
     }
 }
