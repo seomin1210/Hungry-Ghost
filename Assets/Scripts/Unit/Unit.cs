@@ -11,9 +11,7 @@ public class Unit : MonoBehaviour
     protected int _currentLevel;
     public int CurrentLevel => _currentLevel;
 
-    private int _currentExp = 0;
-
-    private Collider _collider;
+    protected Collider _collider;
 
     protected virtual void Awake()
     {
@@ -25,36 +23,11 @@ public class Unit : MonoBehaviour
         _collider = GetComponent<Collider>();
     }
 
-    public void AddExp(int exp)
-    {
-        _currentExp += exp;
-
-        CheckLevelUp();
-    }
-
-    private void CheckLevelUp()
-    {
-        if (_currentExp >= NeedExpTable.NeedExp[_currentLevel - 1])
-        {
-            LevelUp();
-
-            CheckLevelUp();
-        }
-    }
-
-    protected virtual void LevelUp()
-    {
-        _currentExp -= NeedExpTable.NeedExp[_currentLevel - 1];
-        _currentLevel += 1;
-
-        // Level Text Update
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Unit>() != null)
+        if (collision.gameObject.GetComponent<Entity>() != null)
         {
-            if (collision.gameObject.GetComponent<Unit>().CurrentLevel > _currentLevel)
+            if (collision.gameObject.GetComponent<Entity>().CurrentLevel > _currentLevel)
             {
                 _collider.isTrigger = true;
             }
@@ -63,12 +36,12 @@ public class Unit : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Unit>() != null)
+        if (other.GetComponent<Entity>() != null)
         {
-            var unit = other.GetComponent<Unit>();
-            if (unit.CurrentLevel > _currentLevel)
+            var entity = other.GetComponent<Entity>();
+            if (entity.CurrentLevel > _currentLevel)
             {
-                unit.AddExp(_unitSO.DropExp);
+                entity.AddExp(_unitSO.DropExp);
 
                 // Destroy
                 return;

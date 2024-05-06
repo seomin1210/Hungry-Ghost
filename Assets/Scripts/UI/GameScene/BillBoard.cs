@@ -20,4 +20,9 @@ public class BillBoard : MonoBehaviour
         transform.rotation = _mainCam.rotation;
         transform.position = _player.position + _offset;
     }
+
+    public void UpdateOffset()
+    {
+        _offset *= 1.3f;
+    }
 }

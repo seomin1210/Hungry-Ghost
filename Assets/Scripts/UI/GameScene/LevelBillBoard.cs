@@ -10,8 +10,8 @@ public class LevelBillBoard : BillBoard
         _levelText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateLevel(int lv)
+    public void UpdateLevel(string lv)
     {
-        _levelText.text = "LV. " + lv.ToString();
+        _levelText.text = "LV. " + lv;
     }
 }

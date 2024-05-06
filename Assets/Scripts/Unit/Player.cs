@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Unit
+public class Player : Entity
 { 
     private Rigidbody _rigidbody;
 
     private float _moveSpeed;
-
-    private LevelBillBoard _levelBillBoard;
 
     protected override void Awake()
     {
@@ -22,8 +20,7 @@ public class Player : Unit
 
         _rigidbody = transform.GetComponent<Rigidbody>();
 
-        _levelBillBoard = FindObjectOfType<LevelBillBoard>();
-        _levelBillBoard.UpdateLevel(_currentLevel);
+        
     }
 
     public void Move(Vector2 dir)
@@ -41,6 +38,7 @@ public class Player : Unit
         base.LevelUp();
 
         // Level Up Effect
-        _levelBillBoard.UpdateLevel(_currentLevel);
+
+        // Camera Zoom Out
     }
 }
