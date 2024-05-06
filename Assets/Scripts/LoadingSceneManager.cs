@@ -1,16 +1,28 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LoadingSceneManager : MonoBehaviour
 {
     public static string NextSceneName;
     [SerializeField]
     private Image _progressBar;
+    [SerializeField]
+    private TextMeshProUGUI _tipText;
+
+    private string[] _tip =
+    {
+        "9레벨 이상이 되면 건물을\n통과할 수 있습니다!",
+        "수명이 많은 거북이를 잡으면\n더 빨리 성장할 수 있습니다.",
+        "레벨이 낮은 다른 유령들을\n흡수해보세요!"
+    };
 
     private void Start()
     {
+        _tipText.text = "Tip. " + _tip[Random.Range(0, _tip.Length)];
+
         StartCoroutine(LoadScene());
     }
 

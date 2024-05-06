@@ -5,5 +5,5 @@ using UnityEngine;
 public static class NeedExpTable
 {
     // Level Max is 15
-    public static int[] NeedExp = { 100, 200, 400, 700, 1000, 2500, 5000, 8000, 15000, 23000, 30000, 50000, 70000, 100000, 300000};
+    public static int[] NeedExp = { 500, 1000, 2000, 3500, 5000, 8000, 10000, 15000, 20000, 35000, 40000, 50000, 75000, 100000, 150000};
 }
