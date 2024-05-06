@@ -18131,7 +18131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508383873}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 2.1316282e-14, z: -8.7041485e-14, w: 1}
+  m_LocalRotation: {x: -0, y: -1.5117951e-10, z: 6.047136e-10, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -64127,7 +64127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704015169}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.61541224, y: 0.000000013979561, z: -0.000000010914911, w: 0.78820544}
+  m_LocalRotation: {x: 0.61541224, y: 0.000000013451567, z: -0.000000010502666, w: 0.78820544}
   m_LocalPosition: {x: 0, y: 20, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -67240,7 +67240,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
