@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : Unit
+{ 
     private Rigidbody _rigidbody;
 
-    [SerializeField]
     private float _moveSpeed;
+
+    private void Awake()
+    {
+        _moveSpeed = UnitSO.MoveSpeed;
+    }
 
     private void Start()
     {
