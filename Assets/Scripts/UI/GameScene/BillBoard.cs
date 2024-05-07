@@ -10,6 +10,8 @@ public class BillBoard : MonoBehaviour
     private Vector3 _offset = Vector3.zero;
     private float[] _offsetY = { 1.5f, 3f, 4f, 5f, 5f, 6f, 7f, 8f, 10f, 13f, 16f, 20f, 24f, 30f, 35f};
 
+    private bool _isDead = false;
+
     private void Awake()
     {
         _mainCam = Camera.main.transform;
@@ -18,12 +20,20 @@ public class BillBoard : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.rotation = _mainCam.rotation;
-        transform.position = _entity.position + _offset;
+        if (_isDead == false)
+        {
+            transform.rotation = _mainCam.rotation;
+            transform.position = _entity.position + _offset;
+        }
     }
 
     public void UpdateOffset(int lv)
     {
         _offset = Vector3.up * _offsetY[lv];
+    }
+
+    public void UnitDead()
+    {
+        _isDead = true;
     }
 }

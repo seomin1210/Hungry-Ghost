@@ -78,14 +78,15 @@ public class GameManager : MonoSingleton<GameManager>
     {
         var waitTime = new WaitForSeconds(30f);
         GameObject obj = null;
+        yield return new WaitForSeconds(60f);
         for (int i = 0; i < _unitList.Length; i++)
         {
             for (int j = 0; j < _unitList[i].cnt; j++)
             {
-                yield return waitTime;
-
-                obj = PoolManager.Instance.GetGameObject(_unitList[i].UnitName);
+                obj = PoolManager.Instance.GetGameObject(_aiList[i].UnitName);
                 obj.transform.position = GetRandomPos();
+
+                yield return waitTime;
             }
         }
     }

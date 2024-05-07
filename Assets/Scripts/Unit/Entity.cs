@@ -9,6 +9,9 @@ public class Entity : Unit
     private Transform _model;
     private BoxCollider _boxCollider;
 
+    private Vector3 _originModelSize = Vector3.zero;
+    private Vector3 _originBoxColSize = Vector3.zero;
+
     protected float _moveSpeed;
 
     protected override void Awake()
@@ -27,6 +30,16 @@ public class Entity : Unit
         _levelBillBoard = GetComponentInChildren<LevelBillBoard>();
         _levelBillBoard.UpdateLevel(_currentLevel);
         _levelBillBoard.UpdateOffset(_currentLevel - 1);
+
+        _originModelSize = _model.localScale;
+        _originBoxColSize = _boxCollider.size;
+
+        if (_currentLevel != 1)
+        {
+            _model.localScale = _originModelSize * Mathf.Pow(1.3f, _currentLevel - 1);
+            _boxCollider.size = _originBoxColSize * Mathf.Pow(1.3f, _currentLevel - 1);
+            _boxCollider.center = new Vector3(0f, _boxCollider.size.y * 0.5f, 0f);
+        }
     }
 
     #region LV
@@ -56,9 +69,9 @@ public class Entity : Unit
         _levelBillBoard.UpdateLevel(_currentLevel);
         _levelBillBoard.UpdateOffset(_currentLevel - 1);
 
-        _model.localScale *= 1.3f;
-        _boxCollider.center = new Vector3(0f, _boxCollider.center.y * 1.3f, 0f);
-        _boxCollider.size *= 1.3f;
+        _model.localScale = _originModelSize * Mathf.Pow(1.3f, _currentLevel - 1);
+        _boxCollider.size = _originBoxColSize * Mathf.Pow(1.3f, _currentLevel - 1);
+        _boxCollider.center = new Vector3(0f, _boxCollider.size.y * 0.5f, 0f);
     }
     #endregion
 

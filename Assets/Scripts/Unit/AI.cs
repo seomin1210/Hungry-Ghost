@@ -17,7 +17,11 @@ public class AI : Entity
     {
         if (_target != null)
         {
-            _agent.SetDestination(_target.position);
+            if (_target.gameObject.activeSelf)
+            {
+                _agent.SetDestination(_target.position);
+            }
+            else FindTarget();
         }
         else
         {
@@ -27,14 +31,17 @@ public class AI : Entity
 
     private void FindTarget()
     {
-        var unitCols = Physics.OverlapSphere(transform.position, 10f, 1 << LayerMask.NameToLayer("Unit"));
+        var unitCols = Physics.OverlapSphere(transform.position, 50f, 1 << LayerMask.NameToLayer("Unit"));
         
         for (int i = 0; i < unitCols.Length; ++i)
         {
             if (unitCols[i].GetComponent<Unit>().CurrentLevel < _currentLevel)
             {
-                _target = unitCols[i].transform;
-                break;
+                if (unitCols[i].gameObject.activeSelf)
+                {
+                    _target = unitCols[i].transform;
+                    break;
+                }
             }
         }
     }

@@ -71,7 +71,5 @@ public class Player : Entity
     protected override void UnitDie()
     {
         GameManager.Instance.GameFailed();
-
-        base.UnitDie();
     }
 }
