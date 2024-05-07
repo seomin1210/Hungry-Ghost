@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Entity : Unit
 {
-    private int _currentExp = 0;
-
     private LevelBillBoard _levelBillBoard;
 
     private Transform _model;
@@ -60,5 +58,27 @@ public class Entity : Unit
         _model.localScale *= 1.3f;
         _boxCollider.center = new Vector3(0f, _boxCollider.center.y * 1.3f, 0f);
         _boxCollider.size *= 1.3f;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Entity>() != null)
+        {
+            if (collision.gameObject.GetComponent<Entity>().CurrentLevel > _currentLevel)
+            {
+                _collider.isTrigger = true;
+            }
+        }
+        else
+        {
+            // Can pass the wall
+            if (_currentLevel >= 4)
+            {
+                if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
+                {
+                    collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                }
+            }
+        }
     }
 }

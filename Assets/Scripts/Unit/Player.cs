@@ -38,4 +38,11 @@ public class Player : Entity
             _camController.ZoomOut(_currentLevel - 6);
         }
     }
+
+    protected override void UnitDie()
+    {
+        // GameOver
+
+        base.UnitDie();
+    }
 }

@@ -2,7 +2,7 @@ using System.Net.Sockets;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class Unit : PoolAble
 {
     [SerializeField]
     protected UnitSO _unitSO;
@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
 
     protected int _currentLevel;
     public int CurrentLevel => _currentLevel;
+    protected int _currentExp = 0;
+
 
     protected Collider _collider;
 
@@ -23,28 +25,6 @@ public class Unit : MonoBehaviour
         _collider = GetComponent<Collider>();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Entity>() != null)
-        {
-            if (collision.gameObject.GetComponent<Entity>().CurrentLevel > _currentLevel)
-            {
-                _collider.isTrigger = true;
-            }
-        }
-        else
-        {
-            // Can pass the wall
-            if (_currentLevel >= 4)
-            {
-                if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
-                {
-                    collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
-                }
-            }
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Entity>() != null)
@@ -52,13 +32,26 @@ public class Unit : MonoBehaviour
             var entity = other.GetComponent<Entity>();
             if (entity.CurrentLevel > _currentLevel)
             {
-                entity.AddExp(_unitSO.DropExp);
+                if (_unitSO.UnitType == UnitType.prey)
+                {
+                    entity.AddExp(_unitSO.DropExp);
+                }
+                else
+                {
+                    int exp = (int)(NeedExpTable.NeedExp[_currentLevel - 1] * 0.1f) + _currentExp;
+                    entity.AddExp(exp);
+                }
 
-                // Destroy
+                UnitDie();
                 return;
             }
         }
 
         _collider.isTrigger = false;
+    }
+
+    protected virtual void UnitDie()
+    {
+        ReleaseObject();
     }
 }
