@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Unit : PoolAble
 {
@@ -20,6 +22,13 @@ public class Unit : PoolAble
     protected virtual void Start()
     {
         _collider = GetComponent<Collider>();
+
+        SceneManager.sceneLoaded += ChangeSceneToRelease;
+    }
+
+    protected virtual void ChangeSceneToRelease(Scene arg0, LoadSceneMode arg1)
+    {
+        ReleaseObject();
     }
 
     protected virtual void OnTriggerEnter(Collider other)

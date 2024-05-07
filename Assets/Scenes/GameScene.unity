@@ -16119,7 +16119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508383873}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -4.3575804e-10, z: 8.7151786e-10, w: 1}
+  m_LocalRotation: {x: -0, y: 1.4210853e-14, z: -2.3092636e-14, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -57602,7 +57602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704015169}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5257311, y: -0.00000004144754, z: 0.000000025615986, w: 0.8506509}
+  m_LocalRotation: {x: 0.5257311, y: 0.000000041398618, z: -0.000000025585752, w: 0.8506509}
   m_LocalPosition: {x: 0, y: 20, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62044,19 +62044,19 @@ MonoBehaviour:
   - UnitName: OldMan
     cnt: 50
   _aiList:
-  - UnitName: AI4
+  - UnitName: AI_4
     cnt: 3
-  - UnitName: AI5
+  - UnitName: AI_5
     cnt: 2
-  - UnitName: AI6
+  - UnitName: AI_6
     cnt: 2
-  - UnitName: AI7
+  - UnitName: AI_7
     cnt: 1
-  - UnitName: AI8
+  - UnitName: AI_8
     cnt: 1
-  - UnitName: AI9
+  - UnitName: AI_9
     cnt: 1
-  - UnitName: AI10
+  - UnitName: AI_10
     cnt: 1
 --- !u!4 &1848484804
 Transform:
@@ -71666,31 +71666,31 @@ MonoBehaviour:
     prefab: {fileID: 3021428596705917915, guid: 267b0de7ebdb5fd4fb1a672ce53d9213,
       type: 3}
     cnt: 50
-  - objectName: AI4
+  - objectName: AI_4
     prefab: {fileID: 5246995441171537928, guid: 6c4d2518d769728498c1b00dd0991b4d,
       type: 3}
     cnt: 3
-  - objectName: AI5
+  - objectName: AI_5
     prefab: {fileID: 5881750998124823430, guid: 0d00fbf4a4ab42e48a9db68b8a9d9d62,
       type: 3}
     cnt: 2
-  - objectName: AI6
+  - objectName: AI+6
     prefab: {fileID: 8265078014432491588, guid: 41cc3e062563f874a94f4ea02b2661f8,
       type: 3}
     cnt: 2
-  - objectName: AI7
+  - objectName: AI_7
     prefab: {fileID: 7421685733608566779, guid: 04de5b97640d88c45bbeedb73f7d7844,
       type: 3}
     cnt: 1
-  - objectName: AI8
+  - objectName: AI_8
     prefab: {fileID: 1388562111579135608, guid: a756ff5e01592c343a72a8f219a490b6,
       type: 3}
     cnt: 1
-  - objectName: AI9
+  - objectName: AI_9
     prefab: {fileID: 9082263128319104389, guid: cfe4ac0d133b3484d9cba51ae9ca8344,
       type: 3}
     cnt: 1
-  - objectName: AI10
+  - objectName: AI_10
     prefab: {fileID: 2980934192868292706, guid: 15569eef4ed905d4f9907ba8011f5abc,
       type: 3}
     cnt: 1

@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -7,6 +8,7 @@ public class PoolAble : MonoBehaviour
 
     public virtual void ReleaseObject()
     {
+        if (gameObject.activeSelf == false) return;
         transform.SetParent(PoolManager.Instance.transform);
         Pool.Release(gameObject);
     }

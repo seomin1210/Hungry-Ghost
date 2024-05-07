@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -71,5 +72,10 @@ public class Player : Entity
     protected override void UnitDie()
     {
         GameManager.Instance.GameFailed();
+    }
+
+    protected override void ChangeSceneToRelease(Scene arg0, LoadSceneMode arg1)
+    {
+        // None
     }
 }
