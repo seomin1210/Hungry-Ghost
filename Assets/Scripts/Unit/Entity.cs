@@ -94,4 +94,11 @@ public class Entity : Unit
         _collider.isTrigger = false;
     }
     #endregion
+
+    protected override void UnitDie()
+    {
+        base.UnitDie();
+
+        _levelBillBoard.UnitDead();
+    }
 }

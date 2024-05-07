@@ -79,9 +79,9 @@ public class GameManager : MonoSingleton<GameManager>
         var waitTime = new WaitForSeconds(30f);
         GameObject obj = null;
         yield return new WaitForSeconds(60f);
-        for (int i = 0; i < _unitList.Length; i++)
+        for (int i = 0; i < _aiList.Length; i++)
         {
-            for (int j = 0; j < _unitList[i].cnt; j++)
+            for (int j = 0; j < _aiList[i].cnt; j++)
             {
                 obj = PoolManager.Instance.GetGameObject(_aiList[i].UnitName);
                 obj.transform.position = GetRandomPos();
