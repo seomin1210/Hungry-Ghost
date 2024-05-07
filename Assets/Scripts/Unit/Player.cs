@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    [Space(10f)]
+    [SerializeField]
+    private AudioClip _eatSound;
+    [SerializeField]
+    private AudioClip _levelUpSound;
+    private AudioSource _source;
+
     private Rigidbody _rigidbody;
 
     private CameraController _camController;
@@ -14,6 +21,7 @@ public class Player : Entity
 
         _rigidbody = transform.GetComponent<Rigidbody>();
         _camController = Camera.main.GetComponent<CameraController>();
+        _source = GetComponent<AudioSource>();
 
         GameManager.Instance.Init();
     }
@@ -28,11 +36,23 @@ public class Player : Entity
         _rigidbody.velocity = v * _moveSpeed;
     }
 
+    #region LV
+    public override void AddExp(int exp)
+    {
+        if (_source.clip != _eatSound) _source.clip = _eatSound;
+        _source.Play();
+
+        base.AddExp(exp);
+    }
+
     protected override void LevelUp()
     {
         base.LevelUp();
 
         // Level Up Effect
+        _source.clip = _levelUpSound;
+        _source.Stop();
+        _source.Play();
 
         // Camera Zoom Out
         if (_currentLevel > 8)
@@ -46,6 +66,7 @@ public class Player : Entity
             GameManager.Instance.GameClear();
         }
     }
+    #endregion
 
     protected override void UnitDie()
     {

@@ -1,5 +1,3 @@
-using System.Net.Sockets;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Unit : PoolAble
@@ -11,7 +9,6 @@ public class Unit : PoolAble
     protected int _currentLevel;
     public int CurrentLevel => _currentLevel;
     protected int _currentExp = 0;
-
 
     protected Collider _collider;
 

@@ -14,6 +14,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     private Vector2 _inputVector;
     private bool _isInput;
 
+    [Space(10f)]
+    [SerializeField]
     private Player _player;
 
     private void Awake()
@@ -22,11 +24,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
 
         _joystick.gameObject.SetActive(false);
         _handler.gameObject.SetActive(false);
-    }
-
-    private void Start()
-    {
-        _player = FindObjectOfType<Player>();
     }
 
     private void Update()
@@ -66,6 +63,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
         _handler.gameObject.SetActive(false);
 
         // Move Stop
-        _player.Move(_inputVector);
+        _player.Move(Vector2.zero);
     }
 }

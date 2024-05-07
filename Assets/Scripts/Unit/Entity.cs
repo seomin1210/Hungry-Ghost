@@ -24,11 +24,12 @@ public class Entity : Unit
         _model = transform.GetChild(1);
         _boxCollider = GetComponent<BoxCollider>();
 
-        _levelBillBoard = transform.GetChild(0).GetComponent<LevelBillBoard>();
+        _levelBillBoard = GetComponentInChildren<LevelBillBoard>();
         _levelBillBoard.UpdateLevel(_currentLevel);
         _levelBillBoard.UpdateOffset(_currentLevel - 1);
     }
 
+    #region LV
     public virtual void AddExp(int exp)
     {
         if (_currentLevel >= 15) return;
@@ -59,7 +60,9 @@ public class Entity : Unit
         _boxCollider.center = new Vector3(0f, _boxCollider.center.y * 1.3f, 0f);
         _boxCollider.size *= 1.3f;
     }
+    #endregion
 
+    #region Collision
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Entity>() != null)
@@ -77,4 +80,5 @@ public class Entity : Unit
 
         _collider.isTrigger = false;
     }
+    #endregion
 }

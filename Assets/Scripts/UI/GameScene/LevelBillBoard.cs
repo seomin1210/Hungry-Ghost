@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LevelBillBoard : BillBoard
 {
+    [SerializeField]
     private TextMeshProUGUI _levelText;
 
     private void Start()
     {
-        _levelText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
