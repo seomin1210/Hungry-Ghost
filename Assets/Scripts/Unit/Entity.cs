@@ -31,7 +31,7 @@ public class Entity : Unit
         _levelBillBoard.UpdateOffset(_currentLevel - 1);
     }
 
-    public void AddExp(int exp)
+    public virtual void AddExp(int exp)
     {
         if (_currentLevel >= 15) return;
         _currentExp += exp;

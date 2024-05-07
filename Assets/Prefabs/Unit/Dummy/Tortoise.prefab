@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 6240892760254417330}
   - component: {fileID: 8950084662969755874}
   - component: {fileID: 7171581710163418698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tortoise
   m_TagString: Untagged
   m_Icon: {fileID: 0}

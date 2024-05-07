@@ -35,14 +35,17 @@ public class Unit : MonoBehaviour
         else
         {
             // Can pass the wall
-            if (_currentLevel >= 8)
+            if (_currentLevel >= 4)
             {
-                collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
+                {
+                    collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                }
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Entity>() != null)
         {

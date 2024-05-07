@@ -14,7 +14,7 @@ public class LoadingSceneManager : MonoBehaviour
 
     private string[] _tip =
     {
-        "9레벨 이상이 되면 건물을\n통과할 수 있습니다!",
+        "4레벨 이상이 되면 건물을\n통과할 수 있습니다!",
         "수명이 많은 거북이를 잡으면\n더 빨리 성장할 수 있습니다.",
         "레벨이 낮은 다른 유령들을\n흡수해보세요!"
     };

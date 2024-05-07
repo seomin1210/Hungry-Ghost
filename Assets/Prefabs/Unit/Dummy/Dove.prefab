@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 5609092171411428686}
   - component: {fileID: 1683163244740209061}
   - component: {fileID: 6009571094397643606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dove
   m_TagString: Untagged
   m_Icon: {fileID: 0}

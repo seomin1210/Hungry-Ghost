@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEngine;
 
 
 public class LevelBillBoard : BillBoard
@@ -8,6 +9,7 @@ public class LevelBillBoard : BillBoard
     private void Start()
     {
         _levelText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
     public void UpdateLevel(int lv)

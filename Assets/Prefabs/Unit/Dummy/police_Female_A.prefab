@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 4449631423842491383}
   - component: {fileID: 2838465649111184480}
   - component: {fileID: 3257707807405331983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: police_Female_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4329745772359142375}
   - component: {fileID: 4608524108264257215}
   - component: {fileID: 7292466847120563399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pigeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 105392856122178495}
   - component: {fileID: 97079882475310805}
   - component: {fileID: 4031433931082107343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: casual_Female_K
   m_TagString: Untagged
   m_Icon: {fileID: 0}
