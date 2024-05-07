@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LittlePeopleUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 6
-  DropExp: 1000
+  StartLevel: 4
+  DropExp: 3000
   MoveSpeed: 0

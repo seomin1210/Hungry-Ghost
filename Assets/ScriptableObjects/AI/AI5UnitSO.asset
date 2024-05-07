@@ -15,4 +15,4 @@ MonoBehaviour:
   UnitType: 1
   StartLevel: 5
   DropExp: 0
-  MoveSpeed: 5
+  MoveSpeed: 8

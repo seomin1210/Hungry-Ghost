@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleGhost_LP (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2152034684815681499, guid: a756ff5e01592c343a72a8f219a490b6,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8012037231619573702, guid: a756ff5e01592c343a72a8f219a490b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,6 +496,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2267494326959755025, guid: 6c4d2518d769728498c1b00dd0991b4d,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2286272421171078171, guid: 6c4d2518d769728498c1b00dd0991b4d,
         type: 3}
       propertyPath: m_Name
@@ -813,6 +823,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6247614966020026411, guid: 41cc3e062563f874a94f4ea02b2661f8,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7293206841341794952, guid: 41cc3e062563f874a94f4ea02b2661f8,
         type: 3}
       propertyPath: m_Name
@@ -903,6 +918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleGhost_LP (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838143456685815262, guid: 15569eef4ed905d4f9907ba8011f5abc,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6291367914546796157, guid: 15569eef4ed905d4f9907ba8011f5abc,
         type: 3}
@@ -1089,6 +1109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleGhost_LP (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076624488092567375, guid: cfe4ac0d133b3484d9cba51ae9ca8344,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1720,6 +1745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleGhost_LP (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2227975209731510388, guid: 0d00fbf4a4ab42e48a9db68b8a9d9d62,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6140571524337265313, guid: 0d00fbf4a4ab42e48a9db68b8a9d9d62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1837,6 +1867,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleGhost_LP (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294007548878459165, guid: 04de5b97640d88c45bbeedb73f7d7844,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

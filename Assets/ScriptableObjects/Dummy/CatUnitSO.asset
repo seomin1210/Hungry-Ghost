@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CatUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 3
-  DropExp: 250
+  StartLevel: 2
+  DropExp: 400
   MoveSpeed: 0

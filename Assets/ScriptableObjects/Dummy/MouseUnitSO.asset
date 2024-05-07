@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitType: 0
   StartLevel: 0
-  DropExp: 20
+  DropExp: 50
   MoveSpeed: 0

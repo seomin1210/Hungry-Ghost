@@ -25,7 +25,7 @@ public class Unit : PoolAble
         _collider = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Entity>() != null)
         {
@@ -46,8 +46,6 @@ public class Unit : PoolAble
                 return;
             }
         }
-
-        _collider.isTrigger = false;
     }
 
     protected virtual void UnitDie()

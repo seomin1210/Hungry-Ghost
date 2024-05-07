@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ParrotUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 4
-  DropExp: 300
+  StartLevel: 3
+  DropExp: 500
   MoveSpeed: 0

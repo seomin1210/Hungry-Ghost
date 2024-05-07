@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DoveUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 2
+  StartLevel: 1
   DropExp: 150
   MoveSpeed: 0

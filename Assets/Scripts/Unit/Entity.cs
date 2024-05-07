@@ -69,16 +69,12 @@ public class Entity : Unit
                 _collider.isTrigger = true;
             }
         }
-        else
-        {
-            // Can pass the wall
-            if (_currentLevel >= 4)
-            {
-                if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
-                {
-                    collision.gameObject.GetComponent<BoxCollider>().isTrigger = true;
-                }
-            }
-        }
+    }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+
+        _collider.isTrigger = false;
     }
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OldManUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 6
-  DropExp: 1000
+  StartLevel: 4
+  DropExp: 2000
   MoveSpeed: 0

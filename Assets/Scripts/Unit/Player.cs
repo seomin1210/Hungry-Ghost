@@ -14,6 +14,8 @@ public class Player : Entity
 
         _rigidbody = transform.GetComponent<Rigidbody>();
         _camController = Camera.main.GetComponent<CameraController>();
+
+        GameManager.Instance.Init();
     }
 
     public void Move(Vector2 dir)
@@ -37,11 +39,17 @@ public class Player : Entity
         {
             _camController.ZoomOut(_currentLevel - 6);
         }
+
+        // Max
+        if (_currentLevel >= 15)
+        {
+            GameManager.Instance.GameClear();
+        }
     }
 
     protected override void UnitDie()
     {
-        // GameOver
+        GameManager.Instance.GameFailed();
 
         base.UnitDie();
     }

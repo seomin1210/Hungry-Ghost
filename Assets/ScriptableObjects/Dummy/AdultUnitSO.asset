@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AdultUnitSO
   m_EditorClassIdentifier: 
   UnitType: 0
-  StartLevel: 8
-  DropExp: 2000
+  StartLevel: 7
+  DropExp: 4000
   MoveSpeed: 0

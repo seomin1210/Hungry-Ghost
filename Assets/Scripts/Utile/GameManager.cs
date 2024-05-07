@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoSingleton<GameManager>
@@ -21,14 +23,31 @@ public class GameManager : MonoSingleton<GameManager>
 
     [SerializeField]
     private UnitInfo[] _unitList = null;
+    [SerializeField]
+    private UnitInfo[] _aiList = null;
+    private Coroutine _coroutine;
 
-    private void Awake()
+    private GameCanvasManager _gameCanvasManager;
+
+    private void Update()
     {
-        Init();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().name == "MainScene")
+            {
+                Application.Quit();
+            }
+            else if (SceneManager.GetActiveScene().name == "GameScene")
+            {
+                LoadingSceneManager.LoadScene("MainScene");
+            }
+        }
     }
 
-    private void Init()
+    public void Init()
     {
+        _gameCanvasManager = FindObjectOfType<GameCanvasManager>();
+
         GameObject obj = null;
         for (int i = 0; i < _unitList.Length; i++)
         {
@@ -36,8 +55,11 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 obj = PoolManager.Instance.GetGameObject(_unitList[i].UnitName);
                 obj.transform.position = GetRandomPos();
+                obj.transform.rotation = new Quaternion(0f, Random.Range(-180f, 180f), 0f, 0f);
             }
         }
+
+        _coroutine = StartCoroutine(AICreate());
     }
 
     public Vector3 GetRandomPos()
@@ -50,5 +72,37 @@ public class GameManager : MonoSingleton<GameManager>
         pos = new Vector3(_xPosition, 0f, _zPosition);
 
         return pos;
+    }
+
+    private IEnumerator AICreate()
+    {
+        var waitTime = new WaitForSeconds(30f);
+        GameObject obj = null;
+        for (int i = 0; i < _unitList.Length; i++)
+        {
+            for (int j = 0; j < _unitList[i].cnt; j++)
+            {
+                yield return waitTime;
+
+                obj = PoolManager.Instance.GetGameObject(_unitList[i].UnitName);
+                obj.transform.position = GetRandomPos();
+            }
+        }
+    }
+
+    public void GameClear()
+    {
+        if (_coroutine != null) StopCoroutine(_coroutine);
+        Time.timeScale = 0f;
+
+        _gameCanvasManager.GameClear();
+    }
+
+    public void GameFailed()
+    {
+        if (_coroutine != null) StopCoroutine(_coroutine);
+        Time.timeScale = 0f;
+
+        _gameCanvasManager.GameFailed();
     }
 }

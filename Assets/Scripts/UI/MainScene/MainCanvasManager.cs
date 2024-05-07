@@ -5,10 +5,10 @@ public class MainCanvasManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _titleObject;
-    [SerializeField]
-    private GameObject _skinObject;
-    [SerializeField]
-    private GameObject _settingObject;
+    //[SerializeField]
+    //private GameObject _skinObject;
+    //[SerializeField]
+    //private GameObject _settingObject;
 
     private void Awake()
     {
@@ -27,15 +27,15 @@ public class MainCanvasManager : MonoBehaviour
         });
 
         // Skin Button
-        _titleObject.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(() =>
-        {
+        //_titleObject.transform.GetChild(0).GetChild(2).GetComponent<Button>().onClick.AddListener(() =>
+        //{
 
-        });
+        //});
 
         // Setting Button
-        _titleObject.transform.GetChild(0).GetChild(3).GetComponent<Button>().onClick.AddListener(() =>
-        {
+        //_titleObject.transform.GetChild(0).GetChild(3).GetComponent<Button>().onClick.AddListener(() =>
+        //{
 
-        });
+        //});
     }
 }
